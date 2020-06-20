@@ -33,6 +33,4 @@ class ConfigManager {
     }
 }
 
-const config = new ConfigManager();
-
-export default config;
+export default new ConfigManager();

@@ -32,7 +32,7 @@ export default class SwitchComponent extends Component {
     }
     
     render() {
-        const { id, name } = this.props.config;
+        const { name } = this.props.config;
 
         return (
             <div>
@@ -41,7 +41,7 @@ export default class SwitchComponent extends Component {
                     <Switch
                         checked={this.state.status}
                         onChange={this.onChange}
-                        name={id}
+                        name={name}
                         color={this.state.status ? "primary" : "secondary"}
                     />
                     }
