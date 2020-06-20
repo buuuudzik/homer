@@ -1,0 +1,8 @@
+{
+    "rooms": [
+        { "id": 1, "floor": "Parter", "name": "Gościnny 1", "short": "Pokój gościnny", "categories": ["gościnne"] }
+    ],
+    "devices": [
+        { "id": 1, "type": "switch", "variant": "lightWithStatus", "name": "Lampa w korytarzu", "objects": { "switch": "0/0/1", "status": "0/0/1" }  }
+    ]
+}
