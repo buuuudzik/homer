@@ -29,6 +29,20 @@
       "variant": "lightWithStatus",
       "name": "Lampa w korytarzu",
       "objects": { "switch": "0/0/1", "status": "0/0/1" }
+    },
+    {
+      "id": 1,
+      "type": "switch",
+      "variant": "lightWithStatus",
+      "name": "Lampa w Kuchni",
+      "objects": { "switch": "0/0/1", "status": "0/0/1" }
+    },
+    {
+      "id": 1,
+      "type": "switch",
+      "variant": "lightWithStatus",
+      "name": "Lampa w Gabinecie",
+      "objects": { "switch": "0/0/1", "status": "0/0/1" }
     }
   ]
 }
