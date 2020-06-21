@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import ExpandLessOutlinedIcon from "@material-ui/icons/ExpandLessOutlined";
-import { Slider, Typography } from "@material-ui/core";
+import { Slider } from "@material-ui/core";
 import localbus from "../../localbus";
 
 const UP = false;
@@ -123,7 +123,7 @@ export default class Blind extends Component {
         )}
         <div
           className={
-            "blind-name" +
+            "device-name" +
             (this.state.motionStatus ? " blind-name--motion" : "")
           }
           onClick={this.onToggleMenu}

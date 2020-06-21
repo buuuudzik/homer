@@ -71,6 +71,36 @@
         "positionStatus": "1/1/7",
         "motionStatus": "0/0/5"
       }
+    },
+    {
+      "id": 5,
+      "type": "hvac",
+      "variant": "hvacComplex",
+      "name": "HVAC w Gabinecie",
+      "roomId": 1,
+      "parameters": {
+        "fanStepMin": 0,
+        "fanStepMax": 5,
+        "buidingModeHeating": 1,
+        "buidingModeCooling": 3,
+        "buidingModeOff": 255,
+        "buidingModeAuto": 0
+      },
+      "objects": {
+        "switch": "0/0/5",
+        "switchStatus": "0/0/5",
+        "temp": "1/1/1",
+        "setp": "1/1/2",
+        "setpStatus": "1/1/2",
+        "mode": "1/1/6",
+        "fanlevel": "1/1/7",
+        "fanlevelStatus": "1/1/7",
+        "fanStep": "1/1/11",
+        "fanStepStatus": "1/1/11",
+        "fanManual": "1/1/10",
+        "fanManualStatus": "1/1/10",
+        "buildingMode": "1/1/9"
+      }
     }
   ]
 }

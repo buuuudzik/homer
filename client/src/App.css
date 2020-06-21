@@ -35,6 +35,17 @@ ol * {
   align-items: center;
 }
 
+.device-name {
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.device-group {
+  display: flex;
+  padding: 7px;
+}
+
 .blind-container {
   position: relative;
 }
@@ -66,15 +77,18 @@ ol * {
   left: 0;
 }
 
-.blind-slider {
+.blind-slider,
+.hvac-slider {
   width: 200px;
   margin: 0 15px;
 }
 
-.blind-name {
-  cursor: pointer;
-  margin-left: 10px;
-}
 .blind-name--motion {
   text-shadow: 3px 3px 3px yellow;
+}
+
+.hvac-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

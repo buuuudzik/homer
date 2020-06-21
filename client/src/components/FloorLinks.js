@@ -8,7 +8,7 @@ export default class Floors extends Component {
       <React.Fragment>
         <Grid container style={{ minWidth: 275, margin: 10 }} spacing={2}>
           {this.props.floors.map((f) => (
-            <FloorLink floor={f} />
+            <FloorLink key={f.id} floor={f} />
           ))}
         </Grid>
       </React.Fragment>
