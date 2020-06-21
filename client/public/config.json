@@ -1,22 +1,34 @@
 {
+  "floors": [
+    { "id": 1, "name": "Piwnica" },
+    { "id": 2, "name": "Parter" },
+    { "id": 3, "name": "Piętro" }
+  ],
   "rooms": [
     {
       "id": 1,
-      "floor": "Parter",
+      "floorId": 2,
       "name": "Gościnny 1",
       "short": "Pokój gościnny",
       "categories": ["gościnne"]
     },
     {
-      "id": 1,
-      "floor": "Piętro",
+      "id": 2,
+      "floorId": 2,
+      "name": "Gościnny 2",
+      "short": "Pokój gościnny 2",
+      "categories": ["gościnne"]
+    },
+    {
+      "id": 3,
+      "floorId": 3,
       "name": "Gabinet 1",
       "short": "Gabinet 1",
       "categories": ["gabinety"]
     },
     {
-      "id": 1,
-      "floor": "Piwnica",
+      "id": 4,
+      "floorId": 1,
       "name": "Pralnia",
       "short": "Pralnia",
       "categories": ["gospodarcze", "pralnie"]
@@ -28,21 +40,37 @@
       "type": "switch",
       "variant": "lightWithStatus",
       "name": "Lampa w korytarzu",
+      "roomId": 1,
       "objects": { "switch": "0/0/1", "status": "0/0/1" }
     },
     {
-      "id": 1,
+      "id": 2,
       "type": "switch",
       "variant": "lightWithStatus",
       "name": "Lampa w Kuchni",
+      "roomId": 1,
       "objects": { "switch": "0/0/1", "status": "0/0/1" }
     },
     {
-      "id": 1,
+      "id": 3,
       "type": "switch",
       "variant": "lightWithStatus",
       "name": "Lampa w Gabinecie",
+      "roomId": 1,
       "objects": { "switch": "0/0/1", "status": "0/0/1" }
+    },
+    {
+      "id": 4,
+      "type": "blind",
+      "variant": "blindWithStatus",
+      "name": "Roleta w Gabinecie",
+      "roomId": 1,
+      "objects": {
+        "upDown": "0/0/5",
+        "position": "1/1/7",
+        "positionStatus": "1/1/7",
+        "motionStatus": "0/0/5"
+      }
     }
   ]
 }

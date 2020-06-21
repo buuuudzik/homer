@@ -1,16 +1,14 @@
 import React from "react";
 import "./App.css";
 import config from "./config";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  CircularProgress,
-  Button,
-  Typography,
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
+import { CircularProgress } from "@material-ui/core";
 import Homepage from "./components/Homepage";
+import Floors from "./components/Floors";
+import Room from "./components/Room";
+import Systems from "./components/Systems";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import TopBar from "./components/TopBar.js";
+import Floor from "./components/Floor.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -51,44 +49,43 @@ class App extends React.Component {
     const styles = {
       root: {
         flexGrow: 1,
-      },
-      menuButton: {
-        marginRight: 10,
-      },
-      title: {
-        flexGrow: 1,
+        width: "100vw",
+        overflowX: "hidden",
       },
     };
 
     return (
-      <div style={styles.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              style={styles.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" style={styles.title}>
-              News
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
-        {this.state.loading ? (
-          <div>
-            <CircularProgress />
-            <div>Ładowanie konfiguracji</div>
-          </div>
-        ) : this.state.withConfig ? (
-          <Homepage config={config} />
-        ) : (
-          <div>{"Nie udało się pobrać konfiguracji:("}</div>
-        )}
-      </div>
+      <Router>
+        <div style={styles.root}>
+          <TopBar config={config} />
+          {this.state.loading ? (
+            <div>
+              <CircularProgress />
+              <div>Ładowanie konfiguracji</div>
+            </div>
+          ) : this.state.withConfig ? (
+            <Switch>
+              <Route path="/floors/:floorId/:roomId" exact>
+                <Room config={config} />
+              </Route>
+              <Route path="/floors/:floorId" exact>
+                <Floor config={config} />
+              </Route>
+              <Route path="/floors">
+                <Floors config={config} />
+              </Route>
+              <Route path="/systems">
+                <Systems config={config} />
+              </Route>
+              <Route path="/">
+                <Homepage config={config} />
+              </Route>
+            </Switch>
+          ) : (
+            <div>{"Nie udało się pobrać konfiguracji:("}</div>
+          )}
+        </div>
+      </Router>
     );
   }
 }

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Grid } from "@material-ui/core";
-import FloorLink from "./FloorLink";
+import RoomLink from "./RoomLink";
 
-export default class Floors extends Component {
+export default class RoomLinks extends Component {
   render() {
     return (
       <React.Fragment>
         <Grid container style={{ minWidth: 275, margin: 10 }} spacing={2}>
-          {this.props.floors.map((f) => (
-            <FloorLink floor={f} />
+          {this.props.rooms.map((r) => (
+            <RoomLink room={r} />
           ))}
         </Grid>
       </React.Fragment>

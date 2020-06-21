@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import Switch from "./controls/Switch";
 import FloorLinks from "./FloorLinks";
 import Fast from "./Fast";
+import Devices from "./Devices";
 
 export default class Homepage extends Component {
   render() {
     const { config } = this.props;
     return (
-      <div>
+      <div style={{ padding: 10 }}>
         <Fast>
-          <Switch config={config.devices[0]}></Switch>
-          <Switch config={config.devices[1]}></Switch>
+          <Devices devices={[config.devices[0], config.devices[1]]} />
         </Fast>
         <FloorLinks floors={config.floors} config={config} />
       </div>

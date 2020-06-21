@@ -10,3 +10,49 @@
 .Topbar .date {
   color: cadetblue;
 }
+
+a {
+  text-decoration: none;
+}
+
+ol * {
+  color: white;
+}
+
+.devices {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.device {
+  background-color: aliceblue;
+  border: 1px solid #3f51b5;
+  margin: 10px 5px;
+  border-radius: 5px;
+  padding: 3px 10px;
+  box-shadow: 1px 1px 1px #3f51b5;
+}
+
+.blind-container {
+  display: flex;
+  align-items: center;
+}
+
+.blind-updown {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #3f51b570;
+  color: #3f51b5;
+  border-radius: 5px;
+}
+
+.blind-position {
+  padding: 10px;
+}
+
+.blind-name {
+  margin-left: 10px;
+}
+.blind-name--motion {
+  text-shadow: 3px 3px 3px yellow;
+}
