@@ -1,8 +1,16 @@
-import React from 'react';
-import './App.css';
-import config from './config';
-import { CircularProgress } from '@material-ui/core';
-import Switch from './components/controls/Switch';
+import React from "react";
+import "./App.css";
+import config from "./config";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  CircularProgress,
+  Button,
+  Typography,
+} from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import Homepage from "./components/Homepage";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,12 +32,12 @@ class App extends React.Component {
     const res = await this.downloadConfig();
     config.setConfig(res);
     this.setState({ withConfig: true });
-  }
+  };
 
   downloadConfig = async () => {
     const res = await fetch("/config.json");
     const obj = await res.json();
-    
+
     if (res.status === 200) {
       this.setState({ loading: false });
       return obj;
@@ -37,27 +45,49 @@ class App extends React.Component {
 
     this.setState({ loading: false, hasError: true });
     return null;
-  }
+  };
 
   render() {
+    const styles = {
+      root: {
+        flexGrow: 1,
+      },
+      menuButton: {
+        marginRight: 10,
+      },
+      title: {
+        flexGrow: 1,
+      },
+    };
+
     return (
-      <div className="App">
-        <header className="App-header">
-          {
-            this.state.loading ? (
-              <div>
-                <CircularProgress />
-                <div>Ładowanie konfiguracji</div>
-              </div>
-            ) : (
-              this.state.withConfig ? (
-                <Switch config={config.devices[0]}></Switch>
-              ) : (
-                <div>{"Nie udało się pobrać konfiguracji:("}</div>
-              )
-            )
-          }
-        </header>
+      <div style={styles.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              style={styles.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" style={styles.title}>
+              News
+            </Typography>
+            <Button color="inherit">Login</Button>
+          </Toolbar>
+        </AppBar>
+        {this.state.loading ? (
+          <div>
+            <CircularProgress />
+            <div>Ładowanie konfiguracji</div>
+          </div>
+        ) : this.state.withConfig ? (
+          <Homepage config={config} />
+        ) : (
+          <div>{"Nie udało się pobrać konfiguracji:("}</div>
+        )}
       </div>
     );
   }

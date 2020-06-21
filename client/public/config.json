@@ -1,8 +1,34 @@
 {
-    "rooms": [
-        { "id": 1, "floor": "Parter", "name": "Gościnny 1", "short": "Pokój gościnny", "categories": ["gościnne"] }
-    ],
-    "devices": [
-        { "id": 1, "type": "switch", "variant": "lightWithStatus", "name": "Lampa w korytarzu", "objects": { "switch": "0/0/1", "status": "0/0/1" }  }
-    ]
+  "rooms": [
+    {
+      "id": 1,
+      "floor": "Parter",
+      "name": "Gościnny 1",
+      "short": "Pokój gościnny",
+      "categories": ["gościnne"]
+    },
+    {
+      "id": 1,
+      "floor": "Piętro",
+      "name": "Gabinet 1",
+      "short": "Gabinet 1",
+      "categories": ["gabinety"]
+    },
+    {
+      "id": 1,
+      "floor": "Piwnica",
+      "name": "Pralnia",
+      "short": "Pralnia",
+      "categories": ["gospodarcze", "pralnie"]
+    }
+  ],
+  "devices": [
+    {
+      "id": 1,
+      "type": "switch",
+      "variant": "lightWithStatus",
+      "name": "Lampa w korytarzu",
+      "objects": { "switch": "0/0/1", "status": "0/0/1" }
+    }
+  ]
 }
