@@ -7,7 +7,7 @@ export default class RoomLink extends Component {
     const { room } = this.props;
     return (
       <div>
-        <Grid key={room.floorId} item xs={12} style={{ margin: 10 }}>
+        <Grid item xs={12} style={{ margin: 10 }}>
           <Paper style={{ padding: 15 }}>
             <Link to={`/floors/${room.floorId}/${room.id}`}>{room.name}</Link>
           </Paper>

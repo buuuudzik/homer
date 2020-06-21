@@ -8,7 +8,7 @@ export default class RoomLinks extends Component {
       <React.Fragment>
         <Grid container style={{ minWidth: 275, margin: 10 }} spacing={2}>
           {this.props.rooms.map((r) => (
-            <RoomLink room={r} />
+            <RoomLink key={r.id} room={r} />
           ))}
         </Grid>
       </React.Fragment>

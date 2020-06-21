@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Switch from "./controls/Switch";
 import FloorLinks from "./FloorLinks";
 import Fast from "./Fast";
 import Devices from "./Devices";
